@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>moderator homepage</title>
+    <style>
+        {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 100%;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            align-items: center;
+        }
+
+        header {
+            text-align: left;
+
+            width: 100%;
+            box-shadow: 0px 0px 5px #818181;
+        }
+
+        h1 {
+            color: #333;
+            font-weight: bold;
+        }
+
+
+        .team-schemes {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 100%;
+        }
+
+        h2 {
+            color: #333;
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+
+        .team-scheme {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0px 0px 5px #818181;
+
+        }
+
+        .team-name {
+            font-weight: bold;
+            color: #333;
+            font-size: 16px;
+        }
+
+        .team-members {
+            display: flex;
+            gap: 10px;
+        }
+
+        .tag {
+            background-color: #ffffff;
+            color: #4caf50;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 14px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #4caf50;
+        }
+
+        .add-button {
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 28px;
+            cursor: pointer;
+            display: block;
+            margin: 30px auto 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .add-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header
+            style="width: 100%; padding: 20px; background-color: #fff; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); margin-bottom: 20px; position: sticky; top: 0; z-index: 1000;">
+            <h2 style="margin: 0; color: #333; font-weight: bold;"><img src="Icon project diagram.png" alt="icon"
+                    style="vertical-align: middle; margin-right: 10px;">Moderator</h2>
+        </header>
+
+        <section class="team-schemes">
+            <h2>Existing Team Schemes</h2>
+            <div class="team-scheme">
+                <div class="team-name">Drones</div>
+                <div class="team-members">
+                    <span class="tag">CS</span>
+                    <span class="tag">AE</span>
+                    <span class="tag">ME</span>
+                    <span class="tag">COE</span>
+                    <span class="tag">SWE</span>
+                    <span class="tag">SWE</span>
+                </div>
+            </div>
+            <div class="team-scheme">
+                <div class="team-name">Robotics</div>
+                <div class="team-members">
+                    <span class="tag">ME</span>
+                    <span class="tag">CS</span>
+                    <span class="tag">EE</span>
+                    <span class="tag">EE</span>
+                    <span class="tag">COE</span>
+                    <span class="tag">SWE</span>
+                </div>
+            </div>
+            <div class="team-scheme">
+                <div class="team-name">Web Development</div>
+                <div class="team-members">
+                    <span class="tag">SWE</span>
+                    <span class="tag">SWE</span>
+                    <span class="tag">SWE</span>
+                    <span class="tag">SWE</span>
+                    <span class="tag">SWE</span>
+                    <span class="tag">SWE</span>
+                </div>
+            </div>
+              <a href="add-team.html" class="add-button"> +++</a></button> 
+            </section>
+    </div>
+</body>
+
+</html>

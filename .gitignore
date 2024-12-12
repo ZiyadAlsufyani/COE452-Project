@@ -1,0 +1,31 @@
+# Dependencies
+node_modules/
+
+# Environment variables
+.env
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+# Coverage directory
+coverage
+
+# VS Code settings
+.vscode/
+
+# Mac files
+.DS_Store
+
+# Windows files
+Thumbs.db
+
+# Temp files
+*.tmp
+*.temp

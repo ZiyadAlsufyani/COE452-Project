@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="admin-homepage.css" rel="stylesheet">
+    <title>Admin Homepage</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-light bg-white fixed-top shadow-sm">
+        <div class="container-fluid">
+            <!-- Offcanvas Toggle Button -->
+            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasSidebar" aria-controls="offcanvasSidebar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand ms-2" href="/admin-homepage.html">Admin Homepage</a>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav class="col-lg-2 d-none d-lg-block sidebar">
+                <div class="position-sticky pt-3">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/admin-homepage.html">
+                                Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin-view-teams.html">
+                                Teams
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="admin page.html">
+                                Team schemes
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <!-- Offcanvas Sidebar for Small Screens -->
+            <div class="offcanvas offcanvas-start  small-sidebar" tabindex="-1" id="offcanvasSidebar"
+                aria-labelledby="offcanvasSidebarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title text-dark" id="offcanvasSidebarLabel">Menu</h5>
+                    <button type="button" class="btn-close btn-close-dark text-reset" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active text-dark" href="/admin-homepage.html">
+                                Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="/admin-view-teams.html">Teams</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="/admin page.html">Team schemes</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Main Content -->
+            <main class="col-lg-10 ms-sm-auto px-md-4 content">
+                <h1>Admin Dashboard</h1>
+                <div class="d-flex align-items-center mb-4 position-relative">
+                    <img src="https://via.placeholder.com/100" id="profilePic" class="rounded-circle me-3 img-100"
+                        alt="Profile Picture">
+                    <button class="btn btn-success btn-sm position-absolute" id="editProfilePicture"
+                        data-bs-toggle="modal" data-bs-target="#editProfileModal" aria-label="Edit profile picture ">
+                        <i class="bi bi-pencil"></i>
+                    </button>
+                    <div>
+                        <h2 class="mb-1"><strong>John Doe</strong></h2>
+                    </div>
+                </div>
+                <!-- Modal for editing profile picture -->
+                <div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="editProfileModalLabel">Edit Profile Picture</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="editProfileForm" novalidate>
+                                    <div class="form-group mb-3">
+                                        <label for="newProfileImage">Select New Profile Image</label>
+                                        <input type="file" class="form-control" id="newProfileImage" accept="image/*"
+                                            required>
+                                        <div class="invalid-feedback">Please upload a profile image.</div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Save changes</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-container">
+                    <!-- User Card -->
+                    <div class="card user-card me-3">
+                        <div class="card-header position-sticky top-0">
+                            <h3>Moderators</h3>
+                        </div>
+                        <div class="card-body">
+                        </div>
+                    </div>
+                    <!-- Add User Card -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Add Moderator</h3>
+                        </div>
+                        <div class="card-body">
+                            <form id="addUserForm" novalidate>
+                                <div class="form-group mb-3">
+                                    <label for="username">Username</label>
+                                    <input type="text" class="form-control" id="username" placeholder="Enter username"
+                                        required>
+                                    <div class="invalid-feedback">Please enter a username.</div>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="password">Password</label>
+                                    <input type="password" class="form-control" id="password"
+                                        placeholder="Enter password" required>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="profileImage">Profile Image</label>
+                                    <input type="file" class="form-control" id="profileImage" accept="image/*" required>
+                                    <div class="invalid-feedback">Please upload a profile image.</div>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <img id="profileImagePreview" src="https://via.placeholder.com/40"
+                                        class="rounded-circle" alt="Profile Preview" width="40" height="40">
+                                </div>
+                                <button type="submit" class="btn btn-success w-100">Add</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <!-- Toast Notification -->
+    <div class="position-fixed bottom-0 end-0 p-3" id="toastConfirmation">
+        <div id="deleteToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <strong class="me-auto">Confirm Deletion</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                Are you sure you want to delete this user?
+                <div class="mt-2 pt-2 border-top">
+                    <button type="button" class="btn btn-danger btn-sm" id="confirmDeleteBtn">Delete</button>
+                    <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="toast">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="admin-homepage.js"></script>
+</body>
+
+</html>

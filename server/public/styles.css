@@ -1,0 +1,431 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    
+}
+
+body {
+    background-color: #f4f4f9;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header {
+
+  width: 100%;
+  height: 64px;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 5px #818181;
+  display: flex;
+  align-items: center;
+  padding: 0 32px;
+  box-sizing: border-box;
+  
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+main {
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+    
+}
+
+
+
+.form-section {
+    width: 1440px;
+    max-width: 1440px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    
+}
+
+.dropdown {
+    cursor: pointer;
+    top: 200px;
+    left: 736px;
+    width: 100%;
+    height: 38px;
+    padding: 0px 8px;
+    border: 1px solid #e5e7eb;
+    box-sizing: border-box;
+    border-radius: 8px;
+    box-shadow: 0px 0px 5px #818181;
+    background-color: #ffffff;
+    color: #030303;
+    font-size: 14px;
+    font-family: "Roboto";
+    line-height: 38px;
+    outline: none;
+    margin: 5px;
+}
+
+
+.input {
+    top: 200px;
+    left: 32px;
+    width: 100%;
+    height: 38px;
+    padding: 0px 8px;
+    border: 0;
+    box-sizing: border-box;
+    border-radius: 8px;
+    box-shadow: 0px 0px 5px #818181;
+    background-color: #ffffff;
+    color: #94a3b8;
+    font-size: 14px;
+    font-family: "Roboto";
+    line-height: 38px;
+    outline: none;
+    margin: 5px;
+}
+
+input[type="text"],
+select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+footer {
+  
+  width: 100%;
+    height: 140px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 5px #818181;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    justify-content: space-between;
+    display: none;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    
+    width: 100%;
+    margin: 0 auto;
+}
+
+.footer-contact {
+    color: #030303;
+    font-family: "Roboto";
+    line-height: 1.5;
+}
+
+
+
+.social-media a {
+    font-size: 20px;
+    margin: 0 5px;
+    color: black;
+    text-decoration: none;
+}
+
+.footer-contact {
+    color: #030303;
+    font-family: "Roboto";
+}
+
+.footer-icons {
+    display: flex;
+    flex-direction: column; /* Stack the text and icons vertically */
+    align-items: flex-end;
+}
+
+.icon-group {
+    display: flex;
+    
+    gap: 10px; /* Space between each icon */
+}
+
+
+.follow-us {
+    font-size: 16px;
+    color: #030303;
+    font-family: "Roboto";
+    font-weight: bold;
+    margin-bottom: 8px; /* Space between text and icons */
+    text-align: right; /* Right-align text */
+}
+
+
+.footer-follow {
+    display: flex;
+    flex-direction: column;
+   align-items: center;
+    text-align: right; /* Right-align the "Follow Us" text */
+    flex: 0; /* Prevent it from stretching */
+}
+
+
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    grid-column: span 2;
+    justify-content: space-between;
+}
+
+.add-theme-button {
+    width: 150px; 
+    align-self: start; 
+    background-color: #286e34;
+    color: #ffffff;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+    font-size: 14px;
+    font-family: "Roboto";
+    cursor: pointer;
+    outline: none;
+}
+
+.add-theme-button:hover {
+    background-color: #1e5a28;
+}
+
+/* Create the Team Scheme Button */
+.create-scheme-button {
+    width:  100%; /* Full width for the form */
+    height: 40px;
+    background-color: #286e34;
+    color: #ffffff;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+    font-size: 16px;
+    font-weight: 500;
+    font-family: "Roboto";
+    cursor: pointer;
+    outline: none;
+}
+
+.create-scheme-button:hover {
+    background-color: #1e5a28;
+}
+
+
+/*Popup card style*/
+
+.style_PopUpCard {
+    display: none;
+    z-index: 10;
+    height: 487px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 450px;
+    width: 80%;
+    max-width: 825px;
+    display: flex;
+    flex-direction: column;
+    grid-row-gap: 20px;
+}
+
+@media (max-width: 500px) {
+    .style_PopUpCard {
+        height: 443px;
+        margin: 18px;
+        box-shadow: 0px 2px 8px rgba(0,0,0,0.25);
+        top: 50%;
+        left: 38%;
+        transform: translate(-40%, -50%);
+        width: auto;
+        min-width: 450px;
+        display: flex;
+        flex-direction: column;
+        grid-row-gap: 10px;
+        position: fixed;
+    }
+}
+
+.style_Header {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    grid-gap: 20px;
+    align-items: center;
+    border-radius: 2px;
+    width: auto;
+    height: 74px;
+    padding: 0px 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 500px) {
+    .style_Header {
+        width: inherit;
+        height: 74px;
+        padding: 0px 5px;
+        box-shadow: 0px 2px 8px rgba(0,0,0,0.25);
+        border-radius: 4px;
+    }
+}
+
+.text_Heading {
+    color: #030303;
+    font-size: 24px;
+    font-family: "Roboto", Arial, sans-serif;
+    font-weight: 700;
+    line-height: 28px;
+}
+
+.text_Title {
+    color: #030303;
+    font-size: 24px;
+    font-family: "Roboto", Arial, sans-serif;
+    font-weight: 700;
+    line-height: 28px;
+}
+
+@media (max-width: 500px) {
+    .text_Title {
+        margin-left: auto;
+    }
+}
+
+.text_Small {
+    color: #030303;
+    font-size: 16px;
+    font-family: "Roboto", Arial, sans-serif;
+    font-weight: 600;
+    line-height: 19px;
+}
+
+.style_InputBox {
+    height: 150px;
+    width: 60%;
+    padding: 0px 8px;
+    border: 0;
+    box-sizing: border-box;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+    color: #030303;
+    font-size: 14px;
+    font-family: "Roboto", Arial, sans-serif;
+    line-height: 16px;
+    outline: none;
+}
+
+
+.style_InputField {
+    width: 80%;
+    height: 38px;
+    padding: 0px 8px;
+    border: 0;
+    box-sizing: border-box;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+    color: #030303;
+    font-size: 14px;
+    font-family: "Roboto", Arial, sans-serif;
+    line-height: 16px;
+    outline: none;
+}
+
+@media (max-width: 500px) {
+    .style_InputBox{
+        width: 90%;
+        box-shadow: 0px 2px 8px rgba(0,0,0,0.25);
+    }
+
+    .style_InputField {
+        width: 90%;
+        box-shadow: 0px 2px 8px rgba(0,0,0,0.25);
+    }
+}
+
+.style_ContainerVertical {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 20px;
+    grid-row-gap: 20px;
+}
+
+.style_AddButton {
+    cursor: pointer;
+    top: 17px;
+    width: 90px;
+    height: 40px;
+    padding: 0px 8px;
+    border: 1px solid #286e34;
+    box-sizing: border-box;
+    border-radius: 8px;
+    background-color: #286e34;
+    color: #ffffff;
+    font-size: 16px;
+    font-family: "Roboto", Arial, sans-serif;
+    font-weight: 600;
+    line-height: 19px;
+    outline: none;
+    margin-top: 20px;
+    margin-right: 10px;
+    align-self: center;
+}
+.style_AddButton:hover {
+    background-color: #1e5a28;
+}
+
+@media (max-width: 500px) {
+    .style_AddButton {
+        width: 90%;
+        margin-top: 0px;
+        margin-right: 10%;
+        margin-bottom: 20px;
+        box-shadow: 0px 2px 8px rgba(0,0,0,0.25);
+    }
+}

@@ -1,0 +1,113 @@
+body {
+    overflow-x: hidden;
+}
+.sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 56px; /* Height of navbar */
+    left: 0;
+    background-color: #cae6db;
+    color: #171212;
+    padding-top: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+.sidebar .nav-link, .offcanvas-body .nav-item {
+    color: #171a1d;
+    margin: 10px 15px;
+}
+.sidebar .nav-link:hover, .offcanvas-body .nav-item:hover {
+    color: #fff;
+    background-color: #a9d9ca;
+    border-radius: 25px; /* Increased border-radius */
+}
+.sidebar .nav-link.active, .offcanvas-body .nav-item.active {
+    background-color: #a9d9ca;
+    color: #171a1d;
+    border-radius: 25px; /* Increased border-radius */
+}
+@media (max-width: 992px) {
+    /* Hide the sidebar by default on smaller screens */
+    .sidebar {
+        display: none;
+    }
+}
+.content {
+    margin-top: 56px; /* Height of navbar */
+    padding: 20px;
+
+}
+@media (min-width: 992px) {
+    .content {
+        margin-left: 250px; /* Match sidebar width */
+        position: relative;
+        width: calc(100% - 250px); /* Account for sidebar width */
+        overflow-x: hidden;
+    }
+}
+
+/* Add hover effect for .details class */
+.details:hover {
+  padding: 0px 5px;
+  border-radius: 25px;
+    background-color: #a5c69b; 
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+.img-100 {
+    width: 100px;
+    height: 100px;
+    
+}
+
+#editProfilePicture {
+    transform: translate(250%, -120%);
+    border-radius: 15px;
+}
+
+@media (max-width: 768px) {
+    /* .btn {
+        font-size: 1.2rem;
+        padding: 10px 20px;
+    } */
+    .details {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .team-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+    .team-actions button {
+        width: 48%;
+    }
+    .img-100 {
+        width: 80px;
+        height: 80px;
+    }
+    #editProfilePicture {
+        width: 25px;
+        height: 25px;
+        font-size: 0.6rem;
+    }
+    /* Adjust font size for smaller screens */
+    body, .sidebar .nav-link, .offcanvas-body .nav-item, .content {
+        font-size: 0.8rem;
+    }
+    /* Force buttons to be vertical */
+    .ms-auto.d-flex.flex-wrap.gap-2 {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+@media (max-width: 576px) {
+    /* Further adjust font size for even smaller screens */
+    body, .sidebar .nav-link, .offcanvas-body .nav-item, .content {
+        font-size: 0.8rem;
+    }
+    /* Force buttons to be vertical */
+    .ms-auto.d-flex.flex-wrap.gap-2 {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

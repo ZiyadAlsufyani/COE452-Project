@@ -1,0 +1,33 @@
+@media only screen and (max-width: 600px) {
+  header{
+    justify-content: center;
+    flex-direction: column;
+  }
+    .page {
+      flex-direction: column;
+      height: auto;
+      align-items: center;
+      justify-content: center;
+    }
+    .login-page {
+      padding: 20px;
+      width: 100%;
+      .tower-image {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .login-form {
+      padding: 20px;
+      width: 90%;
+      text-align: center; /* Centered text area */
+    }
+    .input-container {
+      margin-top: 40px; /* Increased vertical margin for text field */
+      width: 100%;
+    }
+    button {
+      margin: 0 auto;
+      width: 50%; /* Reduced button size */
+    }
+  }

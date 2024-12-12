@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Web page created using create-react-app">
+    
+    <!--Style Sheet-->
+    <link href="TeamFormation.css" rel="stylesheet">
+
+
+    <title>Team Formation</title>
+
+</head>
+  <body>
+      
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+      
+    <div id="root">
+
+      <div class="App">
+
+        <div class="style_Screen">
+            
+        <!-- Page Header --> 
+
+        <form>
+            <div class="style_Header">
+                
+                <button fdprocessedid="3vosu" class="style_SideBarButton" >
+                    <svg viewBox="0 0 448 512" class="style_SideBarIcon" width="14" height="14">
+                        <path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path>
+                    </svg>
+                </button>
+                
+                <div>
+                    <svg class="style_Icon" viewBox="0 0 576 512" width="20" height="16">
+                        <path d="M0 80C0 53.49 21.49 32 48 32H144C170.5 32 192 53.49 192 80V96H384V80C384 53.49 405.5 32 432 32H528C554.5 32 576 53.49 576 80V176C576 202.5 554.5 224 528 224H432C405.5 224 384 202.5 384 176V160H192V176C192 177.7 191.9 179.4 191.7 180.1L272 288H368C394.5 288 416 309.5 416 336V432C416 458.5 394.5 480 368 480H272C245.5 480 224 458.5 224 432V336C224 334.3 224.1 332.6 224.3 331L144 224H48C21.49 224 0 202.5 0 176V80z"></path>
+                    </svg>
+                    <text class="text_Title"> Team Formation </text>
+                </div>
+                
+                <button type="button" id="Save" class="style_DefaultButton" fdprocessedid="2u7yz7" >Save</button>
+            </div>
+            
+            <!-- Card featuring input fields --> 
+            
+          <div class="style_LargeCard">
+            <div class="style_ContainerVertical">
+            <text class="text_Heading">Creat Your Team</text>
+              <text class="text_Small">Team Name</text>
+              <input id="name" class="style_InputField" placeholder="Enter team name" fdprocessedid="s3vz33">
+              <text class="text_Small">Team Description</text>
+              <textarea id="description" class="style_InputBox" style="resize: none;" placeholder="Describe your team" fdprocessedid="jzdeqj"></textarea>
+                </div>
+              </div>
+
+            <!-- Card with Team Schemes -->
+
+          <div class="style_MediumCard">
+            <div class="style_ContainerVertical">
+              <text class="text_Heading">Team Scheme</text>
+              <div class="style_ContainerHorizontal" id="schemeContainer">
+
+                 <div id="A" class="style_SmallCard">
+                  <div class="style_Image"
+                    style="background-image: 
+                      url(&quot;https://assets.api.uizard.io/api/cdn/stream/5cd610b2-623f-4861-aa55-ba5b4aae1eaa.png&quot;);">
+                  </div>
+                  <text class="text_Small">Data Science</text>
+                </div>
+
+
+                <div id="B" class="style_SmallCard">
+                  <div class="style_Image"
+                    style="background-image: 
+                      url(&quot;https://assets.api.uizard.io/api/cdn/stream/5cd610b2-623f-4861-aa55-ba5b4aae1eaa.png&quot;);">
+                  </div>
+                  <text class="text_Small">Quantum Computing</text>
+                </div>
+
+                <div id="C" class="style_SmallCard">
+                  <div class="style_Image"
+                    style="background-image: 
+                      url(&quot;https://assets.api.uizard.io/api/cdn/stream/5cd610b2-623f-4861-aa55-ba5b4aae1eaa.png&quot;);">
+                  </div>
+                  <text class="text_Small">Cybersecurity</text>
+                </div> 
+                
+                  
+               
+
+              </div>
+
+              <button type="button" class="style_WideButton" fdprocessedid="kbo5yw" onclick="window.location.href='student from a team page.html';">Customize New Scheme</button>
+
+                </div>
+
+              </div>
+            </form>
+            </div>
+
+          </div>
+
+    </div>
+
+    <script> //script for fetching schemes and posting a team
+
+  //var/const/let
+  const majorMap = new Map();
+  const majorList = [];
+  let schemes =[];
+
+  majorMap.set('A',["COE","ICS","STAT"]);
+  majorMap.set('B',["COE","EE","ICS"]);
+  majorMap.set('C',["ICS","SWE","COE"]);
+
+  document.getElementById('A').addEventListener('click', () => {copyMajors(majorList, majorMap.get('A')); }); 
+  document.getElementById('B').addEventListener('click', () => {copyMajors(majorList, majorMap.get('B')); }); 
+  document.getElementById('C').addEventListener('click', () => {copyMajors(majorList, majorMap.get('C')); }); 
+
+
+
+    //fetch schemes function
+
+    async function fetchSchemes(){ 
+
+      fetch('http://ec2-54-90-250-174.compute-1.amazonaws.com:80/schemes/all')
+        .then(response => response.json())
+        .then(data => {
+            handleSchemes(data); //function that handles schemes
+        })
+        .catch(error => {
+            console.error('Error fetching schemes:', error); //error message 
+            });
+      
+    }
+
+    function handleSchemes(schemesData){
+    if (!schemesData || schemesData.length === 0) {
+                  alert("No Schemes exist");
+    }else{
+
+        schemes=schemesData;
+      schemes.forEach((scheme, index) => {
+        creatCard(index,scheme.schemeName);//dc name
+        majorMap.set(index+'',scheme.majors); //dc majors name
+    });
+                  
+    }
+
+      
+
+
+    }
+
+
+
+
+
+    //creat cards
+
+    function creatCard(index, name) {
+
+      const cardContainer = document.getElementById('schemeContainer');
+
+      const schemeCard = document.createElement('div');
+      schemeCard.className = "style_SmallCard";
+      schemeCard.id = index + ''; //id = index
+      const cardHtml = '<div class="style_Image" style="background-image: url(&quot;https://assets.api.uizard.io/api/cdn/stream/5cd610b2-623f-4861-aa55-ba5b4aae1eaa.png&quot;);"></div><text class="text_Small">' + name + '</text>';
+
+      schemeCard.innerHTML = cardHtml;
+      cardContainer.appendChild(schemeCard);
+
+      document.getElementById(
+        schemeCard.id).addEventListener(
+          'click', () => {copyMajors(majorList, majorMap.get(schemeCard.id)); }); //save majors list so it can be posted when the form is submitted
+
+
+
+
+
+     
+
+    }
+
+    //Copy majors function for the cards
+    function copyMajors(majorList, otherList) {
+        for (let i = 0; i < otherList.length; i++) {
+          majorList[i] = otherList[i];
+        }
+
+      }
+
+    // post function
+    async function postTeam(){
+
+      //get values
+
+      let name = document.getElementById('name').value.trim();
+      let description = document.getElementById('description').value.trim();
+    // majors is selected above
+
+
+      try {
+        const response = await fetch('http://ec2-54-90-250-174.compute-1.amazonaws.com:80/team/add', {//dc url
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ //dc these below
+              'teamName':name,
+              'description':description,
+              'majors': majorList //add majors list here
+            })
+        });
+
+        const res = await response.json();
+        
+        if (response.ok) {
+            alert('Team created successfully');
+            window.location.href = 'student-homepage.html';//dc
+        } else {
+            alert(res.error || 'An error occurred while creating a team');
+        }
+    } catch (error) {
+        alert('An error occurred while connecting to the server. Please try again.');
+        console.error('Error:', error);
+    }
+
+
+    }
+
+
+    //event handlers
+
+    document.addEventListener('DOMContentLoaded', fetchSchemes);
+    document.getElementById("Save").addEventListener('click',async function(event){
+      event.preventDefault();
+      postTeam();
+      
+    });
+
+
+
+
+  </script>
+  
+
+    <span id="PING_IFRAME_FORM_DETECTION" style="display: none;"></span>
+
+
+  </body>
+
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>student from a team page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body id="mainBody">
+    
+     
+    <header class="header">
+        <div class="icon">
+            <h1>Project</h1>
+        </div>
+        <nav>
+            <a href="#" style="position: absolute; top: 24px; right: 32px; color: #030303; text-decoration: none;">Home</a>
+        </nav>
+    </header>
+
+   
+    <main style="padding: 20px; display: flex; justify-content: center; align-items: center; flex-direction: column;">
+        <section style="width: 100%; max-width: 800px;">
+            <h2 style="text-align: left; color: #030303; font-family: 'Roboto'; margin-top: 40px;">Add Team Scheme</h2>
+            <form id="team-scheme-form" style="display: grid; gap: 20px;">
+                
+                
+                <label>
+                    <span style="color: #030303; font-family: 'Roboto'; font-size: 16px;">Scheme Name:</span>
+                    <input id='name' type="text" placeholder="Enter scheme name" class="input" />
+                </label>
+
+                
+                <label>
+                    <span style="color: #030303; font-family: 'Roboto'; font-size: 16px;">Member 1 University Major:</span>
+                    <select id="first" class="dropdown">
+                        <option value="">Select major</option>
+                        <option value="ICS">Computer Science</option>
+                        <option value="EE">Electrical Engineering</option>
+                        <option value="BUS">Business</option>
+                        <option value="SWE">Software Engineering</option>
+                    </select>
+                </label>
+                
+                <label>
+                    <span style="color: #030303; font-family: 'Roboto'; font-size: 16px;">Member 2 University Major:</span>
+                    <select id="second" class="dropdown">
+                        <option value="">Select major</option>
+                        <option value="ICS">Computer Science</option>
+                        <option value="EE">Electrical Engineering</option>
+                        <option value="BUS">Business</option>
+                        <option value="SWE">Software Engineering</option>
+                    </select>
+                </label>
+
+                <label>
+                    <span style="color: #030303; font-family: 'Roboto'; font-size: 16px;">Member 3 University Major:</span>
+                    <select id="third" class="dropdown">
+                        <option value="">Select major</option>
+                        <option value="ICS">Computer Science</option>
+                        <option value="EE">Electrical Engineering</option>
+                        <option value="BUS">Business</option>
+                        <option value="SWE">Software Engineering</option>
+                    </select>
+                </label>
+                
+                <label>
+                    <span style="color: #030303; font-family: 'Roboto'; font-size: 16px;">Member 4 University Major:</span>
+                    <select id="fourth" class="dropdown">
+                        <option value="">Select major</option>
+                        <option value="ICS">Computer Science</option>
+                        <option value="EE">Electrical Engineering</option>
+                        <option value="BUS">Business</option>
+                        <option value="SWE">Software Engineering</option>
+                    </select>
+                </label>
+
+                <label>
+                    <span style="color: #030303; font-family: 'Roboto'; font-size: 16px;">Member 5 University Major:</span>
+                    <select id="fifth" class="dropdown">
+                        <option value="">Select major</option>
+                        <option value="ICS">Computer Science</option>
+                        <option value="EE">Electrical Engineering</option>
+                        <option value="BUS">Business</option>
+                        <option value="SWE">Software Engineering</option>
+                    </select>
+                </label>
+
+      <!--Buttons-->    
+                
+                <div class="button-group">
+                    <button type="button" class="button add-theme-button" id="displayAddThemeButton" onclick="displayAddTheme()">Add a Theme</button>
+                    <button id= "creat"type="button" class="button create-scheme-button" >Create the Team Scheme</button>
+                </div>
+                
+                <!-- popup script-->
+
+
+                <script>
+                    var div = document.createElement('div');
+                    function displayAddTheme() {
+
+                        var htmlString = '<div class="style_PopUpCard" id="addThemePopup"><div class="style_Header"><div></div><text class="text_Heading"> Add a Theme to the Scheme </text><div></div></div><div class="style_ContainerVertical"><text class="text_Small">Name</text><input class="style_InputField" placeholder="Theme"><text class="text_Small">Description</text><input class="style_InputBox" placeholder="Enter a description"><button class="style_AddButton" id="addThemeButton" onclick="closeAddTheme()">Add</button></div></div>';
+
+                        var div = document.createElement('div');
+                        div.innerHTML = htmlString.trim();
+
+                        var button = document.getElementById("displayAddThemeButton");
+
+                        if (button.style.display!="none") {
+                            document.getElementById("mainBody").appendChild(div);
+                            button.style.display = "none";
+                        }
+                        
+                    }
+
+                    function closeAddTheme() {
+
+        
+                        var button1 = document.getElementById("displayAddThemeButton");
+
+                        var card = document.getElementById("addThemePopup");
+                        if (button1.style.display == "none") {
+                            card.parentNode.removeChild(card);
+                            button1.style.display = "inline";
+                        }
+
+                    }
+
+
+                </script>
+
+
+<!--End of popup script-->
+                
+            </form>
+
+            <script>
+                document.getElementById(
+                'creat').addEventListener(
+                'click', () => {
+
+                const majors=[];
+                majors.push(document.getElementById('first').value);
+                majors.push(document.getElementById('second').value);
+                majors.push(document.getElementById('third').value);
+                majors.push(document.getElementById('fourth').value);
+                majors.push(document.getElementById('fifth').value);
+                postScheme(majors,document.getElementById('name').value.trim());
+                
+
+
+
+                });
+
+                async function postScheme(majors,name){
+
+
+                    try {
+                    const response = await fetch('http://ec2-54-90-250-174.compute-1.amazonaws.com:80/teamScheme/add', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ 
+                            'schemeName':name,
+                            'description':"...",
+                            'majors': majors 
+                        })
+                    });
+
+                    const res = await response.json();
+                    
+                    if (response.ok) {
+                        alert('Scheme created successfully');
+                        window.location.href = 'TeamFormation.html';
+                    } else {
+                        alert(res.error || 'An error occurred while creating a scheme');
+                    }
+                    } catch (error) {
+                    alert('An error occurred while connecting to the server. Please try again.');
+                    console.error('Error:', error);
+                    }
+
+
+                }
+                
+
+
+
+
+            </script>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-contact">
+                <p><b>Contact Us</b></p><p><br>Email:<br>Phone: +123 456 7890</p>
+            </div>
+            
+            <div class="footer-follow">
+                <p class="follow-us">Follow Us</p>
+                <div class="icon-group">
+                    <a href="#"><img src="Icon facebook.png" alt="Facebook Icon" class="icon"></a>
+                    <a href="#"><img src="Icon twitter.png" alt="Twitter Icon" class="icon"></a>
+                    <a href="#"><img src="Icon linkedin.png" alt="LinkedIn Icon" class="icon"></a>
+                    <a href="#"><img src="Icon instagram.png" alt="Instagram Icon" class="icon"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

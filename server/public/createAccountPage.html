@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title> 
+    <link rel="stylesheet" href="createAccountStylePage.css"> 
+    <link rel="stylesheet" href="mobileLogin.css">
+</head>
+<body>
+    <!-- Header section -->
+    <header>
+      <div class="header-logo">
+      <img src="kfupm-logo.png" alt="kfupm-logo">
+      </div>
+      <div>
+        <h2>SWE & ICS Team</h2>
+      </div>
+      <div>
+        <a href="" style="color: black; text-decoration: none;">Home</a>
+      </div>
+    </header>
+
+    <!-- Container for the create account page -->
+<div class="create-account-page">
+    <!-- back button -->
+    <a href="loginPage.html" class="back-button"> <!-- Changed from button to a tag -->
+        <div class="back-button-box">
+          <span class="back-button-elem">
+            <svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z"
+              ></path>
+            </svg>
+          </span>
+          <span class="back-button-elem">
+            <svg viewBox="0 0 46 40">
+              <path
+                d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z"
+              ></path>
+            </svg>
+          </span>
+        </div>
+      </a>
+    
+    <h1 style="text-align: center; flex-grow: 1;">Create a New Account</h1>
+        <!-- Container for the account creation form -->
+        <div class="create-account-form">
+            <!-- Form for creating an account -->
+            <form class="form" id = "createAccountForm"> <!-- Form action and method -->
+                 <!-- Group for name input -->
+                 <div class="input-container">
+                    <input id="new-name" name="name" placeholder="Enter Name" class="input-field" type="text" required aria-label="Name">
+                    <label for="new-name" class="input-label">Enter Name</label>
+                    <span class="input-highlight"></span>
+                </div>
+                <!-- Group for email input -->
+                <div class="input-container">
+                    <input id="new-email" name="email" placeholder="Enter Email" class="input-field" type="email" required aria-label="Email">
+                    <label for="new-email" class="input-label">Enter Email</label>
+                    <span class="input-highlight"></span>
+                </div>
+                <!-- Group for WhatsApp number input -->
+                <div class="input-container">
+                    <input id="whatsapp-number" name="whatsappNumber" placeholder="Enter WhatsApp Number" class="input-field" type="number" pattern="[0-9]*" required aria-label="WhatsApp Number">
+                    <label for="whatsapp-number" class="input-label">Enter WhatsApp Number</label>
+                    <span class="input-highlight"></span>
+                </div>
+                <!-- Group for university major input -->
+                <div class="input-container">
+                    <input id="university-major" name="major" placeholder="Enter University Major" class="input-field" type="text" required aria-label="University Major">
+                    <label for="university-major" class="input-label">Enter University Major</label>
+                    <span class="input-highlight"></span>
+                </div>
+                <!-- Group for description input -->
+                <div class="input-container">
+                    <textarea id="description" name="description" placeholder="Enter Description" class="input-field" required aria-label="Description"></textarea>
+                    <label for="description" class="input-label">Enter Description</label>
+                    <span class="input-highlight"></span>
+                </div>
+                <!-- Group for batch year input -->
+                <div class="input-container">
+                    <input id="batch-year" name="batchYear" placeholder="Enter Batch Year" class="input-field" type="number" required aria-label="Batch Year">
+                    <label for="batch-year" class="input-label">Enter Batch Year</label>
+                    <span class="input-highlight"></span>
+                </div>
+                <!-- Group for password input -->
+                <div class="input-container">
+                  <input id="new-password" name="password" placeholder="Enter Password" class="input-field" type="password" required aria-label="Password">
+                  <label for="new-password" class="input-label">Enter Password</label>
+                  <span class="input-highlight"></span>
+                </div>
+                <!-- Group for submit button -->
+                <div class="input-container">
+                    <button type="submit" class="create-account-button" aria-label="Create Account"><span class="button">Create</span><span>Account</span></button>
+                </div>
+            </form>
+    </div>
+</div>
+<script>
+//   document.getElementById('createAccountForm').addEventListener('submit', async function (e) {
+//     e.preventDefault();
+
+//     const formData = new FormData(this);
+//     const data = Object.fromEntries(formData);
+
+//     try {
+//         const response = await fetch('http://ec2-54-90-250-174.compute-1.amazonaws.com:80/auth/create-account', {
+//             method: 'POST',
+//             headers: { 'Content-Type': 'application/json' },
+//             body: JSON.stringify(data),
+//         });
+
+//         const result = await response.json();
+//         if (response.ok) {
+//             alert('Account created successfully!');
+//         } else {
+//             alert('Error: ${result.message}');
+//         }
+//     } catch (error) {
+//         console.error('Error:', error);
+//         alert('An error occurred. Please try again later.');
+//     }
+// });
+</script>
+</body>
+<script src="formValidation.js"></script>
+</html>

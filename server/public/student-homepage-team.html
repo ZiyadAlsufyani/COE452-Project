@@ -1,0 +1,286 @@
+<!-- 
+
+This HTML file represents the student homepage for a team-building project. It includes the following sections:
+
+1. Head Section:
+    - Meta charset and title.
+    - Links to Bootstrap CSS, Google Fonts, FontAwesome, and custom CSS.
+
+2. Body Section:
+    - Navbar: Contains a brand name, offcanvas toggle button, and an "Edit Profile" button.
+    - Sidebar: Contains navigation links for "Home" and "Team Proposals".
+    - Offcanvas Sidebar: A collapsible sidebar for small screens with navigation links.
+    - Main Content:
+        - Profile Section: Displays the user's profile picture, name, WhatsApp number, major, and description.
+        - My Team Members Card: Lists the team members with their profile pictures, names, majors, and action buttons (WhatsApp and delete).
+        - Pending Requests Card: Lists pending team member requests with their profile pictures, names, majors, and action buttons (WhatsApp, accept, and delete).
+        - Delete Team Button: A button to delete the entire team.
+        - Info Modal: A modal to display detailed information about a team member.
+        - Edit Profile Modal: A modal to edit the user's profile information.
+        - Edit Profile Picture Modal: A modal to edit the user's profile picture.
+
+3. Scripts:
+    - Bootstrap JS Bundle for Bootstrap functionalities.
+    - Custom JavaScript file for additional functionalities.
+
+Note: The file includes placeholders for images and links to external resources.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Builder</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="homeStyles.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-light bg-white fixed-top shadow-sm">
+        <div class="container-fluid">
+            <!-- Offcanvas Toggle Button -->
+            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasSidebar" aria-controls="offcanvasSidebar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand ms-2" href="#">Team Builder</a>
+            <button class="btn btn-outline-success ms-auto" type="button" id="editProfileBtn">Edit Profile</button>
+        </div>
+    </nav>
+    <!-- Sidebar -->
+    <nav class="sidebar">
+        <div class="position-sticky pt-3">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#"> Home </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="student-team-proposals.html"> Team Proposals </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Offcanvas Sidebar for Small Screens -->
+    <div class="offcanvas offcanvas-start bg-light" tabindex="-1" id="offcanvasSidebar"
+        aria-labelledby="offcanvasSidebarLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title text-dark" id="offcanvasSidebarLabel">Menu</h5>
+            <button type="button" class="btn-close btn-close-dark text-reset" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="nav flex-column">
+                <li class="nav-item ">
+                    <a class="nav-link active text-dark " href="#"> Home </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="student-team-proposals.html">Team Proposals</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- Main Content -->
+    <main class="px-md-4 content">
+        <div class="d-flex align-items-center mb-4 position-relative">
+            <img src="account_circle.svg" id="profilePic" class="rounded-circle me-3 img-100" alt="Profile Picture">
+            <button class="btn btn-success btn-sm position-absolute" id="editProfilePicture" data-bs-toggle="modal" data-bs-target="#editProfilePicModal" aria-label="Edit profile picture">
+                <i class="bi bi-pencil"></i>
+            </button>
+            <div id="userInfo" style="padding: 20px;">
+                <h2 class="mb-1"><strong>Ali Ahmed</strong></h2>
+                <p class="mb-1">WhatsApp: +966567890123</p>
+                <p class="mb-1">Major: Computer Science</p>
+                <p class="mb-0">A dedicated student with a passion for software development and teamwork.</p>
+            </div>
+        </div>
+        <!-- My Team Members Card -->
+        <div class="card mb-4" id="myTeamMembers">
+            <div class="card-header">
+                <h4>My Team Members</h4>
+            </div>
+            <div class="card-body">
+                <!-- Team Member 1 -->
+                <div class="d-flex align-items-center mb-3">
+                    <img src="person.svg" class="rounded-circle me-3" alt="Member Picture">
+                    <div class="details">
+                        <h5 class="mb-1">Omar Alhamdian</h5>
+                        <p class="mb-1">Major: Computer Science</p>
+                    </div>
+                    <div class="ms-auto d-flex flex-wrap gap-2">
+                        <a href="https://wa.me/+966507113611" target="_blank">
+                            <button class="btn btn-outline-success btn-sm btn-md-normal me-2">
+                                <i class="fab fa-whatsapp"></i>
+                            </button>
+                        </a>
+                        <button class="btn btn-outline-danger btn-sm btn-md-normal delete">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center mb-3">
+                    <img src="person.svg" class="rounded-circle me-3" alt="Member Picture">
+                    <div class="details">
+                        <h5 class="mb-1">Ahmed baik</h5>
+                        <p class="mb-1">Major: Electrical Engineering</p>
+                    </div>
+                    <div class="ms-auto d-flex flex-wrap gap-2">
+                        <a href="https://wa.me/+966507113611" target="_blank">
+                            <button class="btn btn-outline-success btn-sm btn-md-normal me-2">
+                                <i class="fab fa-whatsapp"></i>
+                            </button>
+                        </a>
+                        <button class="btn btn-outline-danger btn-sm btn-md-normal delete">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- Add more team members similarly -->
+            </div>
+        </div>
+
+
+        <div class="card mb-4">
+            <div class="card-header">
+                <h4>Pending Requests</h4>
+            </div>
+            <div class="card-body"> 
+                <!-- Pending Request 1 -->
+                <div class="d-flex align-items-center mb-3">
+                    <img src="person.svg" class="rounded-circle me-3" alt="Member Picture">
+                    <div class="details">
+                        <h5 class="mb-1">Mohammed Abo-Ras</h5>
+                        <p class="mb-1">Major: Electrical Engineering</p>
+                    </div>
+                    <div class="ms-auto d-flex flex-wrap gap-2">
+                        <a href="https://wa.me/+966507113611" target="_blank">
+                            <button class="btn btn-outline-success btn-sm btn-md-normal me-md-2">
+                                <i class="fab fa-whatsapp"></i>
+                            </button>
+                        </a>
+                        <button class="btn btn-outline-success btn-sm btn-md-normal me-md-2 accept">
+                            <i class="fas fa-check"></i>
+                        </button>
+                        <button class="btn btn-outline-danger btn-sm btn-md-normal delete">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- Pending Request 2 -->
+                <div class="d-flex align-items-center mb-3">
+                    <img src="person.svg" class="rounded-circle me-3" alt="Member Picture">
+                    <div class="details">
+                        <h5 class="mb-1">Omar Ali</h5>
+                        <p class="mb-1">Major: Accounting</p>
+                    </div>
+                    <div class="ms-auto d-flex flex-wrap gap-2">
+                        <a href="https://wa.me/+966507113611" target="_blank">
+                            <button class="btn btn-outline-success btn-sm btn-md-normal me-md-2">
+                                <i class="fab fa-whatsapp"></i>
+                            </button>
+                        </a>
+                        <button class="btn btn-outline-success btn-sm btn-md-normal me-md-2 accept">
+                            <i class="fas fa-check"></i>
+                        </button>
+                        <button class="btn btn-outline-danger btn-sm btn-md-normal delete">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </div> 
+                <!-- Add more pending requests similarly -->
+            </div>
+        </div> <!-- Delete Team Button -->
+        <div class="d-flex justify-content-center">
+            <button class="btn btn-outline-danger">Delete Team</button>
+            
+        </div>
+
+        <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content bg-white">
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <img src="person.svg" class="rounded-circle mb-3" alt="Profile Picture">
+                        <h5 class="modal-title fs-5" id="exampleModalLabel">John Doe</h5>
+                        <p class="mb-3"> a dedicated student with a passion for
+                            Accounting and teamwork.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Edit Profile Modal -->
+        <div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editProfileModalLabel">Edit Profile</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="editProfileForm">
+                            <div class="mb-3">
+                                <label for="profileName" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="profileName" value="Ali Ahmed">
+                            </div>
+                            <div class="mb-3">
+                                <label for="profileWhatsApp" class="form-label">WhatsApp</label>
+                                <input type="text" class="form-control" id="profileWhatsApp" value="+966567890123">
+                            </div>
+                            <div class="mb-3">
+                                <label for="profileMajor" class="form-label">Major</label>
+                                <input type="text" class="form-control" id="profileMajor" value="Computer Science">
+                            </div>
+                            <div class="mb-3">
+                                <label for="profileDescription" class="form-label">Description</label>
+                                <textarea class="form-control" id="profileDescription"
+                                    rows="3">a dedicated student with a passion for software development and teamwork.</textarea>
+                            </div>
+                            <button type="submit" class="btn btn-success">Save changes</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Edit Profile Picture Modal -->
+        <div class="modal fade" id="editProfilePicModal" tabindex="-1" aria-labelledby="editProfilePicModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editProfilePicModalLabel">Edit Profile Picture</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="editProfilePicForm" novalidate>
+                            <div class="form-group mb-3">
+                                <label for="newProfileImage">Select New Profile Image</label>
+                                <input type="file" class="form-control" id="newProfileImage" accept="image/*" required>
+                                <div class="invalid-feedback">Please upload a profile image.</div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save changes</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <!-- Bootstrap JS Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- FontAwesome for icons -->
+    <script src="student-home-team-scripts.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,463 @@
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+
+.style_Icon {
+    fill: #030303;
+    color: #030303;
+    font-size: 20px;
+    top: 29px;
+    left: 17px;
+    width: 20px;
+    height: 16px;
+}
+
+.style_TeamIcon{
+    fill: #030303;
+    color: #030303;
+    font-size: 20px;
+    top: 29px;
+    left: 17px;
+    width: 30px;
+    height: 36px;
+}
+
+
+
+
+.style_DefaultButton {
+    cursor: pointer;
+    top: 17px;
+    width: 90px;
+    height: 40px;
+    padding: 0px 8px;
+    border: 1px solid #286e34;
+    box-sizing: border-box;
+    border-radius: 8px;
+    background-color: #286e34;
+    color: #ffffff;
+    font-size: 16px;
+    font-family: "Roboto", Arial, sans-serif;
+    font-weight: 600;
+    line-height: 19px;
+    outline: none;
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+.style_DefaultButton:hover {
+    background-color: #1e5a28;
+}
+
+@media (max-width: 500px) {
+    .style_DefaultButton {
+        font-family: "Lexend Deca";
+    }
+}
+
+.style_AddButton {
+    cursor: pointer;
+    top: 17px;
+    width: 90px;
+    height: 40px;
+    padding: 0px 8px;
+    border: 1px solid #286e34;
+    box-sizing: border-box;
+    border-radius: 8px;
+    background-color: #286e34;
+    color: #ffffff;
+    font-size: 16px;
+    font-family: "Roboto", Arial, sans-serif;
+    font-weight: 600;
+    line-height: 19px;
+    outline: none;
+    margin-top: 20px;
+    margin-right: 10px;
+    align-self: center;
+}
+
+@media (max-width: 500px) {
+    .style_AddButton {
+        width: 90%;
+        margin-top: 0px;
+        margin-right: 10%;
+        margin-bottom: 20px;
+        box-shadow: 0px 2px 8px rgba(0,0,0,0.25);
+        font-family: "Lexend Deca";
+    }
+}
+
+
+
+
+
+
+.style_WideButton {
+    cursor: pointer;
+    height: 40px;
+    padding: 0px 8px;
+    border: 1px solid #286e34;
+    box-sizing: border-box;
+    border-radius: 8px;
+    background-color: #286e34;
+    color: #ffffff;
+    font-size: 16px;
+    font-family: "Roboto", Arial, sans-serif;
+    font-weight: 600;
+    line-height: 19px;
+    outline: none;
+    align-content: center;
+    align-self: center;
+    width: 212px;
+    box-shadow: -2px 2px 0px rgba(0,0,0,0.25);
+}
+
+.style_WideButton:hover {
+    background-color: #1e5a28;
+}
+
+@media (max-width: 500px) {
+    .style_WideButton {
+        width: inherit;
+        margin-left: auto;
+        box-shadow: 0px 2px 8px rgba(0,0,0,0.25);
+        font-family: "Lexend Deca";
+    }
+}
+
+
+
+
+
+.style_Header {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    grid-gap: 20px;
+    align-items: center;
+    border-radius: 2px;
+    width: auto;
+    height: 74px;
+    padding: 0px 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 500px) {
+    .style_Header {
+        width: inherit;
+        height: 74px;
+        padding: 0px 5px;
+        box-shadow: 0px 2px 8px rgba(0,0,0,0.25);
+        border-radius: 4px;
+    }
+}
+
+
+
+.style_LargeCard {
+    top: 106px;
+    left: 32px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    width: auto;
+    height: 377px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 20px;
+    margin: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+@media (max-width: 500px) {
+    .style_LargeCard {
+        width: 90%;
+        height: 377px;
+        padding-right: 10px;
+        padding-left: 10px;
+        padding-top: 10px;
+        margin: 18px;
+        box-shadow: 0px 2px 8px rgba(0,0,0,0.25);
+    }
+}
+
+
+
+.style_MediumCard {
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    width: auto;
+    height: 377px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 20px;
+    margin: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+
+
+@media (max-width: 500px) {
+    .style_MediumCard {
+        display: flex;
+        width: 90%;
+        height: 377px;
+        padding-right: 10px;
+        padding-left: 10px;
+        padding-top: 10px;
+        margin: 18px;
+        box-shadow: 0px 2px 8px rgba(0,0,0,0.25);
+    }
+}
+
+
+
+
+.style_SmallCard {
+    background-color: #ffffff;
+    border-radius: 8px;
+    align-items: center;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    height: 164px;
+    width: 600px;
+    min-width: 400px;
+    box-shadow: none;
+}
+
+.style_SmallCard:hover { 
+    background-color: #dbd5d5;
+    
+}
+
+
+
+@media (max-width: 500px) {
+    .style_SmallCard {
+        height: 200px;
+        width: 300px;
+        grid-gap: 10px;
+        text-align: center;
+        box-shadow: none;
+    }
+}
+
+
+.style_InputField {
+    top: 216px;
+    left: 56px;
+    width: inherit;
+    height: 38px;
+    padding: 0px 8px;
+    border: 0;
+    box-sizing: border-box;
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: #030303;
+    font-size: 14px;
+    font-family: "Roboto", Arial, sans-serif;
+    line-height: 19px;
+    outline: none;
+    align-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.style_InputBox {
+    top: 302px;
+    left: 56px;
+    width: inherit;
+    height: 150px;
+    padding: 0px 8px;
+    border: 0;
+    box-sizing: border-box;
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: #030303;
+    font-size: 14px;
+    font-family: "Roboto", Arial, sans-serif;
+    line-height: 19px;
+    outline: none;
+    text-align: initial;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+@media (max-width: 500px) {
+    .style_InputField {
+        box-shadow: 0px 2px 8px rgba(0,0,0,0.25);
+        font-family: "Lexend Deca";
+    }
+
+    .style_InputBox {
+        box-shadow: 0px 2px 8px rgba(0,0,0,0.25);
+        font-family: "Lexend Deca";
+    }
+}
+
+
+
+.style_Image {
+    top: 603px;
+    left: 222px;
+    border-radius: 8px;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    align-content: center;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    width: 100px;
+    height: 100px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+@media (max-width: 500px) {
+    .style_Image {
+        width: 120px;
+        height: 120px;
+        box-shadow: 0px 2px 8px rgba(0,0,0,0.25);
+    }
+}
+
+.style_Screen{
+    width: 100%;
+    background-color: #fafafa;
+    overflow-x: hidden;
+}
+
+.style_ContainerHorizontal {
+   display: flex;
+    flex-direction: row;
+    grid-gap: 20px;
+    overflow-x: scroll;
+}
+
+
+@media (max-width: 500px) {
+    .style_ContainerHorizontal {
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        grid-gap: 20px;
+        align-self: center;
+        overflow-y: hidden;
+    }
+}
+
+
+.style_ContainerVertical {
+    width: inherit;
+    display: flex;
+    flex-direction: column;
+    grid-gap: 20px;
+}
+
+@media (max-width: 500px) {
+    .style_ContainerVertical {
+        grid-gap: 10px;
+        padding: 10px;
+    }
+}
+
+
+
+
+.style_Title {
+    padding: 10px 15px;
+}
+
+
+.style_SideBarButton {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 40px;
+    border: 0;
+    box-sizing: border-box;
+    border-radius: 8px;
+    color: #ffffff;
+    background-color: #286e34;
+    outline: none;
+    display:none;
+    margin-right: auto;
+}
+
+.style_SideBarButton:hover {
+    background-color: #1e5a28;
+}
+
+.style_SideBarIcon {
+    color: #ffffff;
+    fill: #ffffff;
+    width: 14px;
+    height: 14px;
+    font-size: 14px;
+}
+
+@media (max-width: 500px) {
+    .style_SideBarButton {
+        display: none;
+    }
+
+}
+
+
+
+
+
+.text_Heading {
+    color: #030303;
+    font-size: 24px;
+    font-family: "Roboto", Arial, sans-serif;
+    font-weight: 700;
+    line-height: 28px;
+}
+
+.text_Title {
+    color: #030303;
+    font-size: 24px;
+    font-family: "Roboto", Arial, sans-serif;
+    font-weight: 700;
+    line-height: 28px;
+}
+
+@media (max-width: 500px) {
+    .text_Title {
+        margin-left: auto;
+        font-family: "Lexend Deca";
+    }
+
+    .text_Small {
+        font-family: "Lexend Deca";
+    }
+
+    .text_Heading {
+        font-family: "Lexend Deca";
+    }
+}
+
+.text_Small {
+    color: #030303;
+    font-size: 16px;
+    font-family: "Roboto", Arial, sans-serif;
+    font-weight: 600;
+    line-height: 19px;
+}
+
+
+}

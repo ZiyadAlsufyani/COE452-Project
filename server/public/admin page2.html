@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>admin page2</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            overflow: hidden;
+        }
+
+
+        .sidebar {
+            width: 250px;
+            background-color: #fff;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            padding-top: 20px;
+        }
+
+        .sidebar a {
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: #f0f0f0;
+        }
+
+        .sidebar a .icon {
+            margin-right: 10px;
+        }
+
+        .container {
+            width: 100%;
+            margin-left: 250px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            align-items: center;
+        }
+
+        header {
+            text-align: left;
+            margin-bottom: 20px;
+            width: 100%;
+            box-shadow: 0px 0px 5px #818181;
+        }
+
+        h1 {
+            color: #333;
+            font-weight: bold;
+        }
+
+        
+        .team-schemes {
+            background-color: #fff;
+            box-shadow: 0px 0px 10px #030303;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-top: 20px;
+            width: 98%;
+            
+            
+        }
+
+        h2 {
+            color: #333;
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+
+        .team-scheme {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0px 0px 5px #818181;
+        }
+
+        .team-name {
+            font-weight: bold;
+            color: #333;
+            font-size: 16px;
+            flex: 1;
+            
+        }
+
+        .team-members {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            flex: 3;
+            justify-content: right;
+        }
+
+        .tag {
+            background-color: #ffffff;
+            color: #4caf50;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 14px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #4caf50;
+        }
+
+        .delete-button {
+            background-color: #f44336;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-left: 20px;
+        }
+        
+
+        .delete-button:hover {
+            background-color: #e53935;
+        }
+
+        .add-button {
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 36px;
+            cursor: pointer;
+            display: block;
+            margin: 30px auto 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .add-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <a href="#"><span class="icon">🏠</span> Home</a>
+        <a href="#"><span class="icon">👥</span> Teams</a>
+        <a href="#"><span class="icon">📊</span> Team schemes</a>
+    </div>
+    <div class="container">
+        <header style="width: 100%; padding: 20px; background-color: #fff; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); margin-bottom: 20px; position: sticky; top: 0; z-index: 1000;">
+            <h2 style="margin: 0; color: #333; font-weight: bold;"><img src="Icon project diagram.png" alt="icon" style="vertical-align: middle; margin-right: 10px;">Existing Team Schemes</h2>
+        </header>
+        <section class="team-schemes">
+            <div class="team-scheme">
+                <div class="team-name">Drones</div>
+                <div class="team-members">
+                    <span class="tag">CS</span>
+                    <span class="tag">AE</span>
+                    <span class="tag">ME</span>
+                    <span class="tag">COE</span>
+                    <span class="tag">SWE</span>
+                    <span class="tag">COE</span>
+                </div>
+                <button class="delete-button">🗑️</button>
+            </div>
+            <div class="team-scheme">
+                <div class="team-name">Robotics</div>
+                <div class="team-members">
+                    <span class="tag">ME</span>
+                    <span class="tag">CS</span>
+                    <span class="tag">EE</span>
+                    <span class="tag">EE</span>
+                    <span class="tag">COE</span>
+                    <span class="tag">SWE</span>
+                </div>
+                <button class="delete-button">🗑️</button>
+            </div>
+            <div class="team-scheme">
+                <div class="team-name">Web Development</div>
+                <div class="team-members">
+                    <span class="tag">SWE</span>
+                    <span class="tag">SWE</span>
+                    <span class="tag">SWE</span>
+                    <span class="tag">SWE</span>
+                    <span class="tag">COE</span>
+                    <span class="tag">SWE</span>
+                </div>
+                <button class="delete-button">🗑️</button>
+            </div>
+            <button class="add-button">+</button>
+        </section>
+    </div>
+</body>
+</html>

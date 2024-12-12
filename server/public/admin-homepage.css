@@ -1,0 +1,138 @@
+/* Custom CSS for Admin Home Page */
+
+body {
+    overflow-x: hidden;
+}
+
+.sidebar {
+    min-width: auto;
+    max-width: 230px;
+    height: 100vh;
+    position: fixed;
+    top: 56px;
+    /* Height of navbar */
+    left: 0;
+    background-color: #cae6db;
+    color: #171212;
+    padding-top: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.small-sidebar {
+    min-width: auto;
+    max-width: 230px;
+    height: 100vh;
+    position: fixed;
+    top: 56px;
+    /* Height of navbar */
+    left: 0;
+    background-color: #cae6db;
+    color: #171212;
+    padding-top: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar .nav-link,
+.offcanvas-body .nav-item {
+    color: #171a1d;
+    margin: 10px 15px;
+}
+
+.sidebar .nav-link:hover,
+.offcanvas-body .nav-item:hover {
+    color: #fff;
+    background-color: #a9d9ca;
+    border-radius: 25px;
+    /* Increased border-radius */
+}
+
+.sidebar .nav-link.active,
+.offcanvas-body .nav-item.active {
+    background-color: #a9d9ca;
+    color: #171a1d;
+    border-radius: 25px;
+    /* Increased border-radius */
+}
+
+@media (max-width: 992px) {
+    /* Hide the sidebar by default on smaller screens */
+    .sidebar {
+        display: none;
+    }
+}
+
+.content {
+    margin-top: 57px;
+    /* Height of navbar */
+    padding: 20px;
+}
+
+/* For smaller screens, ensure the content takes full width */
+@media (max-width: 992px) {
+    .content {
+        margin-left: 0;
+    }
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+@media (min-width: 992px) {
+    .card-container {
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+}
+
+.user-card {
+    max-height: 500px;
+    width: 100%;
+    overflow-y: auto;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+    .user-card {
+        max-height: 300px; /* Set the desired height for mobile view */
+        overflow-y: auto; /* Enable vertical scrolling */
+    }
+}
+
+.user-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.user-item img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+/* Ensure the card header has a background color */
+.card-header {
+    background-color: #f8f9fa;
+    z-index: 1;
+    /* Ensure the header stays above the content */
+}
+
+.img-100 {
+    width: 100px;
+    height: 100px;
+}
+
+#editProfilePicture {
+    transform: translate(260%, -120%);
+}
+
+#toastConfirmation {
+    z-index: 5;
+}

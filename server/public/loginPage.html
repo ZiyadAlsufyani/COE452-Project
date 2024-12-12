@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="loginStylePage.css">
+    <link rel="stylesheet" href="mobileLogin.css">
+</head>
+
+<body>
+    <!-- Container for the login page -->
+    <div class="page">
+
+        <div class="login-page">
+            <h1 style="margin-bottom: 50px;">SWE & ICS Team</h1>
+            <img src="KFUPMtower.png" alt="KFUPM Tower" class="tower-image">
+        </div>
+
+        <div class="login-page">
+            <!-- Container for the login logo -->
+            <div class="login-logo">
+                <img src="logo.png" alt="KFUPM Logo" class="logo-image">
+            </div>
+            <!-- Container for the login form -->
+            <div class="login-form">
+                <!-- Form for login -->
+                <form class="form"> <!-- Form action and method -->
+                    <!-- Group for username input -->
+                    <div class="input-container">
+                        <input id="username" name="username" placeholder="Enter Email" class="input-field" type="text"
+                            required aria-label="Username">
+                        <label for="input-field" class="input-label">Enter Email</label>
+                        <span class="input-highlight"></span>
+                    </div>
+                    <!-- Group for password input -->
+                    <div class="input-container">
+                        <input id="password" name="password" placeholder="Enter Password" class="input-field"
+                            type="password" required aria-label="Password">
+                        <label for="input-field" class="input-label">Enter Password</label>
+                        <span class="input-highlight"></span>
+                    </div>
+                    <!-- Group for submit button -->
+                    <div class="input-container">
+                        <button type="submit" class="button" aria-label="Log in">
+                            <span>Log</span><span>In</span>
+                        </button>
+                    </div>
+                    <!-- Group for create account button -->
+                    <section class="create-account">
+                        <a href="createaccountpage.html" aria-label="Create Account" class="button"
+                            style="background-color: lightgray;">
+                            <span>Create</span><span>Account</span>
+                        </a>
+                    </section>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.querySelector('.form').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+
+            try {
+                const response = await fetch('http://ec2-54-90-250-174.compute-1.amazonaws.com:80/auth/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data),
+                    credentials: 'include'
+                });
+
+                const result = await response.json();
+
+                if (response.ok && result.token) {
+                    localStorage.setItem('user_id', result.user_id);
+                    localStorage.setItem('token', result.token);
+                    if (result.role === 'admin') {
+                        localStorage.setItem('role', 'admin');
+                    }
+                    document.cookie = `token=${result.token}; path=/;`;
+                    window.location.href = result.redirectUrl;
+                } else {
+                    alert(result.message || 'Login failed');
+                }
+            } catch (error) {
+                console.error('Login error:', error);
+                alert('An error occurred during login');
+            }
+        });
+    </script>
+</body>
+
+</html>
