@@ -1,5 +1,5 @@
 // Constants
-const API_BASE_URL = 'http://ec2-54-90-250-174.compute-1.amazonaws.com:80';
+const API_BASE_URL = 'http://localhost:3000';
 
 // Function to get auth headers
 function getAuthHeaders() {

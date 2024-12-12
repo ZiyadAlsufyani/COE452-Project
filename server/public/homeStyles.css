@@ -13,6 +13,20 @@ body {
     padding-top: 20px;
     box-shadow: 2px 0 5px rgba(0,0,0,0.1);
 }
+
+.small-sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 56px;
+    /* Height of navbar */
+    left: 0;
+    background-color: #cae6db;
+    color: #171212;
+    padding-top: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
 .sidebar .nav-link, .offcanvas-body .nav-item {
     color: #171a1d;
     margin: 10px 15px;

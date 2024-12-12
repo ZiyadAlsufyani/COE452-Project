@@ -1,7 +1,7 @@
 // student-scripts.js
 
 // Constants
-const API_BASE_URL = 'http://ec2-54-90-250-174.compute-1.amazonaws.com:80';
+const API_BASE_URL = 'http://localhost:3000';
 let STUDENT_ID = '';
 let hasTeam = false;
 let teamId = null;
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
     try {
         // Verify token on load
-        const verifyResponse = await fetch('http://ec2-54-90-250-174.compute-1.amazonaws.com:80/auth/verify', {
+        const verifyResponse = await fetch('http://localhost:3000/auth/verify', {
             headers: {
                 'Authorization': `Bearer ${token}`
             }

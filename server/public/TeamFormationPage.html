@@ -9,8 +9,9 @@
     
     <!--Style Sheet-->
     <link href="TeamFormation.css" rel="stylesheet">
-
-
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="72x72" href="./favicons/icons8-group-task-stickers-72.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="57x57" href="./favicons/icons8-group-task-stickers-57.png">
     <title>Team Formation</title>
 
 </head>
@@ -127,7 +128,7 @@
 
     async function fetchSchemes(){ 
 
-      fetch('http://ec2-54-90-250-174.compute-1.amazonaws.com:80/schemes/all')
+      fetch('http://localhost:3000/schemes/all')
         .then(response => response.json())
         .then(data => {
             handleSchemes(data); //function that handles schemes
@@ -205,7 +206,7 @@
 
 
       try {
-        const response = await fetch('http://ec2-54-90-250-174.compute-1.amazonaws.com:80/team/add', {//dc url
+        const response = await fetch('http://localhost:3000/team/add', {//dc url
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ //dc these below

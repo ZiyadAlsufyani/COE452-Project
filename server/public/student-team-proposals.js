@@ -1,5 +1,5 @@
 // Constants
-const API_BASE_URL = 'http://ec2-54-90-250-174.compute-1.amazonaws.com:80';
+const API_BASE_URL = 'http://localhost:3000';
 let STUDENT_ID = '';
 
 // Function to get auth headers
@@ -107,7 +107,7 @@ function fetchTeams() {
 
 // Move requestToJoin to global scope
 function requestToJoin(teamId, teamName) {
-    fetch(`http://ec2-54-90-250-174.compute-1.amazonaws.com:80/team/join/${teamId}`, {
+    fetch(`http://localhost:3000/team/join/${teamId}`, {
         method: 'POST',
         headers: getAuthHeaders(),
         body: JSON.stringify({

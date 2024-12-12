@@ -53,7 +53,7 @@
 
 1. Clone the repository
 ```bash
-git clone 
+git clone https://github.com/ZiyadAlsufyani/COE452-Project.git
 ```
 
 2. Install server dependencies
@@ -64,6 +64,7 @@ npm install
 
 3. Configure environment variables Create a .env file in the server directory with:
 MONGODB_URI=mongodb+srv://ziyad:Fvz49UPtx9lVET4q@testcluster.cpids.mongodb.net/team-formation-database
+NODE_ENV=development
 JWT_SECRET=write_any_jwt_secret_you_choose
 
 4. Start the server
@@ -72,7 +73,7 @@ npm run dev
 ```
 
 ### Usage
-1. Access the application at http://ec2-54-90-250-174.compute-1.amazonaws.com:80
+1. Access the application at http://localhost:3000
     1) To view student pages enter (Email = ali@example.com, password = Aa11223344)
     2) To view admin page enter (Email = admin, password = Admin@1234)
 
