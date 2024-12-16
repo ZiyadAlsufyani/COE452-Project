@@ -55,7 +55,7 @@ document.querySelector('.form').addEventListener('submit', async function(event)
 
     // If validation passes, submit to backend
     try {
-        const response = await fetch("http://localhost:3000/auth/create-account", {
+        const response = await fetch("http://ec2-157-175-58-17.me-south-1.compute.amazonaws.com:80/auth/create-account", {
             method: 'POST',
             headers: getAuthHeaders(),
             body: JSON.stringify({

@@ -190,7 +190,7 @@
             const description = document.getElementById('teamDescription').value;
 
             try {
-                const response = await fetch('http://localhost:3000/team/moderator/add', {
+                const response = await fetch('http://ec2-157-175-58-17.me-south-1.compute.amazonaws.com:80/team/moderator/add', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
