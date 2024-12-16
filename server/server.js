@@ -30,7 +30,7 @@ app.use('/auth', authRoutes);
 
 // Add this middleware to protect HTML files
 const protectHtmlRoutes = (req, res, next) => {
-  const publicFiles = ['/loginPage.html', '/createaccountpage.html', '/'];
+  const publicFiles = ['/loginPage.html', '/createAccountPage.html', '/'];
   console.log(`Request path: ${req.path}`); // Log the requested path
 
   if (publicFiles.includes(req.path)) {
